@@ -1,0 +1,297 @@
+:root {
+  color: #202124;
+  background: #f7f7f5;
+  font-family: Arial, "Noto Sans KR", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+body {
+  margin: 0;
+}
+
+.page-container {
+  width: min(100% - 32px, 960px);
+  margin: 0 auto;
+  padding: 56px 0 72px;
+}
+
+.page-header {
+  margin-bottom: 32px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #4169a8;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+}
+
+.description {
+  margin: 12px 0 0;
+  color: #5f6368;
+}
+
+.auth-section {
+  margin-bottom: 32px;
+  border: 1px solid #e0e2e5;
+  border-radius: 12px;
+  padding: 24px;
+  background: #fff;
+}
+
+.auth-section h2,
+.auth-form h3 {
+  margin-top: 0;
+}
+
+.auth-message {
+  min-height: 24px;
+  margin: 0 0 16px;
+  color: #555d67;
+}
+
+.auth-message.error {
+  color: #b3261e;
+}
+
+.auth-forms {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.auth-form {
+  display: grid;
+  gap: 8px;
+}
+
+.auth-form label {
+  font-weight: 700;
+}
+
+.auth-form button {
+  margin-top: 8px;
+  justify-self: start;
+}
+
+.logged-in-area {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.logged-in-area p {
+  margin: 0;
+}
+
+.orders-section {
+  margin-bottom: 32px;
+  border: 1px solid #e0e2e5;
+  border-radius: 12px;
+  padding: 24px;
+  background: #fff;
+}
+
+.orders-section h2 {
+  margin-top: 0;
+}
+
+.orders-message,
+.purchase-message {
+  min-height: 24px;
+  margin: 0 0 16px;
+  color: #555d67;
+}
+
+.orders-message.error,
+.purchase-message.error {
+  color: #b3261e;
+}
+
+.orders-list {
+  display: grid;
+  gap: 12px;
+}
+
+.order-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px 16px;
+  border-top: 1px solid #e0e2e5;
+  padding-top: 12px;
+}
+
+.order-item h3,
+.order-item p {
+  margin: 0;
+}
+
+.order-date {
+  grid-column: 1 / -1;
+  color: #5f6368;
+  font-size: 0.9rem;
+}
+
+.search-form {
+  margin-bottom: 24px;
+}
+
+.search-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.search-row {
+  display: flex;
+  gap: 8px;
+}
+
+input,
+button {
+  min-height: 46px;
+  border-radius: 8px;
+  font: inherit;
+}
+
+input {
+  width: 100%;
+  border: 1px solid #bfc4ca;
+  padding: 0 14px;
+}
+
+button {
+  flex: 0 0 auto;
+  border: 0;
+  padding: 0 22px;
+  background: #315d9d;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover,
+button:focus-visible {
+  background: #264b81;
+}
+
+button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+input:focus-visible,
+button:focus-visible {
+  outline: 3px solid #a9c5ef;
+  outline-offset: 2px;
+}
+
+.status-message {
+  min-height: 24px;
+  margin: 0 0 16px;
+  color: #555d67;
+}
+
+.status-message.error {
+  color: #b3261e;
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.book-card {
+  min-height: 170px;
+  border: 1px solid #e0e2e5;
+  border-radius: 12px;
+  padding: 22px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 4%);
+}
+
+.book-card h2 {
+  margin: 0 0 14px;
+  font-size: 1.15rem;
+  line-height: 1.45;
+}
+
+.author {
+  margin: 0 0 20px;
+  color: #5f6368;
+}
+
+.price {
+  margin: 0;
+  color: #315d9d;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.purchase-controls {
+  display: grid;
+  grid-template-columns: 84px 1fr;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.purchase-controls label {
+  grid-column: 1 / -1;
+  font-weight: 700;
+}
+
+.purchase-controls input {
+  min-width: 0;
+}
+
+@media (max-width: 700px) {
+  .page-container {
+    padding-top: 36px;
+  }
+
+  .book-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 460px) {
+  .auth-forms {
+    grid-template-columns: 1fr;
+  }
+
+  .logged-in-area {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .order-item {
+    grid-template-columns: 1fr;
+  }
+
+  .search-row {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .book-grid {
+    grid-template-columns: 1fr;
+  }
+}

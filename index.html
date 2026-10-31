@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>온라인 서점</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="page-container">
+      <header class="page-header">
+        <p class="eyebrow">ONLINE BOOKSTORE</p>
+        <h1>도서 목록</h1>
+        <p class="description">읽고 싶은 도서를 제목으로 찾아보세요.</p>
+      </header>
+
+      <section class="auth-section" aria-labelledby="authTitle">
+        <h2 id="authTitle">회원</h2>
+        <p id="authMessage" class="auth-message" role="status" aria-live="polite"></p>
+
+        <div id="loggedOutArea" class="auth-forms">
+          <form id="signUpForm" class="auth-form">
+            <h3>회원가입</h3>
+            <label for="signUpEmail">이메일</label>
+            <input id="signUpEmail" name="email" type="email" autocomplete="email" required />
+            <label for="signUpPassword">비밀번호</label>
+            <input id="signUpPassword" name="password" type="password" autocomplete="new-password" required />
+            <button type="submit">회원가입</button>
+          </form>
+
+          <form id="signInForm" class="auth-form">
+            <h3>로그인</h3>
+            <label for="signInEmail">이메일</label>
+            <input id="signInEmail" name="email" type="email" autocomplete="email" required />
+            <label for="signInPassword">비밀번호</label>
+            <input id="signInPassword" name="password" type="password" autocomplete="current-password" required />
+            <button type="submit">로그인</button>
+          </form>
+        </div>
+
+        <div id="loggedInArea" class="logged-in-area" hidden>
+          <p><strong id="userEmail"></strong> 님이 로그인했습니다.</p>
+          <button id="signOutButton" type="button">로그아웃</button>
+        </div>
+      </section>
+
+      <section id="ordersSection" class="orders-section" aria-labelledby="ordersTitle" hidden>
+        <h2 id="ordersTitle">내 주문</h2>
+        <p id="ordersMessage" class="orders-message" role="status" aria-live="polite"></p>
+        <div id="ordersList" class="orders-list"></div>
+      </section>
+
+      <form id="searchForm" class="search-form">
+        <label for="searchInput">도서 제목 검색</label>
+        <div class="search-row">
+          <input
+            id="searchInput"
+            name="search"
+            type="search"
+            placeholder="예: 자바스크립트"
+            autocomplete="off"
+          />
+          <button type="submit">검색</button>
+        </div>
+      </form>
+
+      <p id="statusMessage" class="status-message" role="status" aria-live="polite"></p>
+      <p id="purchaseMessage" class="purchase-message" role="status" aria-live="polite"></p>
+      <section id="bookList" class="book-grid" aria-label="도서 목록"></section>
+    </main>
+
+    <!-- SDK → config.js → app.js 순서로 불러옵니다. -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="./config.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
